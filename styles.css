@@ -1,0 +1,240 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playpen Sans Deva", cursive;
+  background-image: url("./bg.png");
+}
+
+/* Overlay */
+#loadingOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  z-index: 999;
+}
+
+/* Hide class */
+.hidden {
+  display: none !important;
+}
+
+/* Modern Spinner */
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #a4cf4a;
+  border-top: 6px solid #35c8b4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+input {
+  font-family: "Playpen Sans Deva", cursive;
+  font-size: 20px;
+  padding: 5px;
+  width: 490px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: #7effee;
+  border: 2px solid black;
+  color: rgb(0, 0, 0);
+}
+
+#weatherForm {
+  display: flex;
+  direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  font-family: "Playpen Sans Deva", cursive;
+  height: 40px;
+  font-size: 20px;
+  padding: 5px;
+  width: 90px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #d1ff6d;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  transform: translateY(-4px);
+  cursor: pointer;
+  box-shadow:
+    0 12px 30px rgba(255, 245, 194, 0.2),
+    0 0 20px rgba(121, 255, 237, 0.6);
+}
+
+/* 👇 Press Effect */
+button:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+input::placeholder {
+  color: rgb(0, 0, 0); /* Menthe */
+  opacity: 1; /* Make sure it doesn’t look faded */
+}
+
+.temps {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.tt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.actual-temp,
+.actual-max-temp,
+.actual-min-temp {
+  font-size: 40px;
+}
+
+.temp-desc {
+  font-size: 25px;
+}
+
+sup {
+  font-size: 20px;
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  gap: 10px;
+  background: linear-gradient(-40deg, #faff9e, #9dfff0, #86f4bf);
+  background-size: 300% 300%;
+  animation: skyMove 8s ease infinite;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px double black;
+}
+
+@keyframes skyMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+img {
+  width: 100px;
+}
+
+.desc {
+  font-size: 25px;
+}
+
+.place-timezone {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.timezone {
+  grid-column: 4 / 5;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.place {
+  font-size: 40px;
+  font-weight: bold;
+  grid-column: 1 / 2;
+}
+
+.divider {
+  border: 2px solid wheat;
+  height: 2px;
+  background: wheat;
+  margin: 5px 0;
+  border-radius: 50%;
+  width: 500px;
+}
+
+.display-deg {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.error {
+  border: 2px solid black;
+  color: white;
+  background-color: rgb(255, 82, 111);
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 6px;
+}
+
+.tt {
+  padding: 10px;
+  width: 200px;
+  margin: 10px;
+  background-color: rgba(207, 240, 235, 0.37);
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.temp-unit {
+  border: 2px solid black;
+  background-color: #d1ff6d;
+  text-align: center;
+  width: 50px;
+  padding: 7px;
+  border-radius: 50%;
+}

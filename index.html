@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Indie+Flower&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Patrick+Hand&family=Playpen+Sans+Deva:wght@100..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sekuya&family=Sigmar&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="script.js" defer></script>
+    <title>Odin Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="weatherForm">
+        <input type="text" id="place-input" placeholder="Location" required />
+        <button type="submit">Search</button>
+      </form>
+      <div class="weather hidden">
+        <div class="place-timezone">
+          <span class="place"></span><span class="temp-unit hidden">&degC</span
+          ><span class="timezone"></span>
+        </div>
+        <img src="" alt="" />
+        <div class="temps">
+          <div class="min-temp tt">
+            <div class="display-deg">
+              <span class="actual-min-temp"></span><sup>°C</sup>
+            </div>
+            <span class="temp-desc">Min. Temp.</span>
+          </div>
+          <div class="temp tt">
+            <div class="display-deg">
+              <span class="actual-temp"></span><sup>°C</sup>
+            </div>
+            <span class="temp-desc">Temp.</span>
+          </div>
+          <div class="max-temp tt">
+            <div class="display-deg">
+              <span class="actual-max-temp"></span><sup>°C</sup>
+            </div>
+            <span class="temp-desc">Max. Temp.</span>
+          </div>
+        </div>
+        <hr class="divider" />
+        <div class="desc"></div>
+      </div>
+
+      <div class="error hidden">
+        <div class="error-msg">scd</div>
+      </div>
+      <!-- Loading Overlay -->
+      <div id="loadingOverlay" class="hidden">
+        <div class="loader"></div>
+        <p>Fetching weather data...</p>
+      </div>
+    </div>
+  </body>
+</html>
